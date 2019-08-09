@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Fondo aleatorio</title>
+    <style>
+    /* CSS para que la capa de fondo
+    ocupe toda la pantalla*/
+
+    #fondo{
+        position:fixed;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+    }
+    </style>
+</head>
+<body>
+<script>
+let rojo=parseInt(Math.random()*255);
+let verde=parseInt(Math.random()*255);
+let azul=parseInt(Math.random()*255);
+document.write(
+    `<div id='fondo' `+
+    `style='background-color:rgb(${rojo},${verde},${azul})'>`+
+    `</div>`
+);
+</script>    
+</body>
+</html>

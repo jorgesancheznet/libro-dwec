@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table{
+            border:1px solid black;
+            border-collapse: collapse;
+            width:100%;
+        }
+        td,th{
+            border:1px solid black;
+            text-align: center;
+        }
+        th{
+            background-color: lightgray
+        }
+    </style>
+</head>
+<body>
+<script>
+const total=10000;
+const simbolosPorFila=10;
+let nSímbolo=1;
+document.write("<h1>Tabla Unicode</h1>");
+document.write("<table>");
+for(let i=1;i<=total/simbolosPorFila;i++){
+    document.write("<tr>");
+    for(let j=1;j<=simbolosPorFila;j++,nSímbolo++){
+        document.write(
+            `<th>${nSímbolo}</th>`+
+            `<td>&#${nSímbolo};</td>`
+        );
+    }
+    document.write("</tr>");
+}
+document.write("</table>");
+</script>    
+</body>
+</html>

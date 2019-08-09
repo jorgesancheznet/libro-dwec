@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Números primos</title>
+    <script src="primo.js"></script>
+</head>
+<body>
+<script>
+    //escribimos el 1 y 2,sabemos que son primos
+    document.write("<p>1</p><p>2</p>");
+    for(let i=3;i<10000;i+=2){
+        if(esPrimo(i))
+            document.write(`<p>${i}</p>`);
+    }
+</script>    
+</body>
+</html>

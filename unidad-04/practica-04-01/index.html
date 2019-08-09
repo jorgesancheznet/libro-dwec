@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cifrado estilo César</title>
+</head>
+<body>
+<script>
+let texto=prompt("Escriba el texto que desea cifrar");
+let clave;
+do{
+    clave=prompt("Escriba la clave (un número entero)");
+    if(isNaN(Number(clave))){
+        alert("No has escrito un número");
+    }
+}while(isNaN(Number(clave))); 
+clave=parseInt(clave); //si hay decimales los quitamos
+for(let letra of texto){
+    let cifra=letra.charCodeAt(letra)+clave;
+    document.write(String.fromCharCode(cifra));
+}
+
+</script>    
+</body>
+</html>

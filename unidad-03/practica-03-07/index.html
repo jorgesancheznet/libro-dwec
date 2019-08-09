@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Triángulo de asteriscos</title>
+    <style>
+    *{
+        font-family:monospace;
+    }
+    </style>
+</head>
+<body>
+<script>
+let n;
+do{
+    n=prompt("Escribe el número de asteriscos que deseas (debe de ser un número entero positivo)");
+}while(isNaN(Number(n)) || n<=0);
+for(let i=1;i<=n;i++){
+    for(let j=1;j<=i;j++){
+        document.write("* ");
+    }
+    document.write("<br>");
+}
+</script>    
+</body>
+</html>

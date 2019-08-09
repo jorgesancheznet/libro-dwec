@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Cuadrados aleatorios</title>
+    <style>
+        div{
+            position:fixed;
+            width:50px;
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+<script>
+for(let i=1;i<=2000;i++){
+    let rojo=parseInt(Math.random()*255);
+    let verde=parseInt(Math.random()*255);
+    let azul=parseInt(Math.random()*255); 
+    let left=(Math.random()*100)+"%";
+    let top=(Math.random()*100)+"%";
+    document.write(
+        `<div style='background-color:`+
+        `rgb(${rojo},${verde},${azul});`+
+        `left:${left};top:${top}'></div>`
+    );
+}    
+</script>    
+</body>
+</html>
