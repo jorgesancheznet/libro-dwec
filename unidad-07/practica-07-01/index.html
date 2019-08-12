@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Añadir párrafo</title>
+</head>
+<body>
+    <ol>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque, rerum rem dolorem amet, iste iure perferendis veritatis praesentium qui reprehenderit molestias commodi expedita quasi quod. Beatae voluptate est harum aliquid?</li>
+        <li>Est, aliquam! Tempora, eos rerum perferendis architecto inventore cumque impedit ratione dolores dicta non repellat tempore, vero quisquam numquam quasi magnam similique. Ad molestiae maxime voluptas provident praesentium illo sunt.</li>
+        <li>Mollitia eos nulla atque quae tenetur facere corrupti ipsum quas nemo, illum fugit? Nisi placeat nobis quis quo pariatur neque eos, sit ab distinctio dicta sunt corporis aliquam tempora eius.</li>
+        <li>Nobis dolor minima laborum quod quibusdam iure esse ex? Provident voluptas labore sunt ullam unde rem veniam neque veritatis officiis accusamus magni, ipsum nulla, tenetur asperiores a odit temporibus amet.</li>
+        <li>Ea aspernatur assumenda, repudiandae minus, ratione nesciunt vitae fuga delectus incidunt laboriosam, nisi amet mollitia qui aliquam! Culpa ratione, molestiae vel, eligendi recusandae laudantium similique maiores quos fuga accusamus ex?</li>
+        <li>At autem possimus magnam numquam provident adipisci aliquam eaque quidem tempora ex nesciunt molestiae dolorem corporis, placeat iste hic, facilis totam rem officia ratione, cupiditate quisquam? Laborum aliquid dolore dolores.</li>
+        <li>Quis quasi provident itaque. Totam dolorem ipsam necessitatibus architecto unde qui doloremque modi molestiae incidunt a ad reprehenderit, deleniti ullam at culpa blanditiis odio ipsa commodi perspiciatis enim iusto quae.</li>
+        <li>Facere laboriosam dicta repellat cumque consequatur hic pariatur doloribus exercitationem distinctio, sequi a cum culpa quam laborum dolorem cupiditate dignissimos magni quo dolorum et unde vero reprehenderit minima. Ullam, iure?</li>
+        <li>Quaerat voluptatum odit ab fugit reiciendis eius molestiae natus. Consequuntur, perferendis! Quas exercitationem dolorem magnam hic! Corrupti ea ratione unde error, minima cum enim quaerat eaque debitis quas. Culpa, magnam.</li>
+    </ol>
+<script>
+  var texto=prompt("Escribe el texto que desees");
+  var posición;
+  if(texto!=null){
+    do{
+      posición=
+         prompt("Escriba la posición de ese texto (número del 1 al 10)");   
+      if(posición!=null){
+        posición=parseInt(Number(posición));
+        if(isNaN(posición) || posición<1 
+           ||posición>10){
+               alert("Número no válido")
+        }
+      }
+    }while(posición!=null && 
+                 (isNaN(posición) || 
+                  posición<1 || posición>10)
+                );
+    //colocación del texto en su posición
+    var lista=document.getElementsByTagName("ol")[0];
+    var nuevoElemento=document.createElement("li");
+    nuevoElemento.innerHTML=`<strong>${texto}</strong`;
+    if(posición==10){
+       //si el número es el 10 se añade al final
+       lista.appendChild(nuevoElemento);
+     }            
+     else{
+       //si no se añade delante de la posición indicada
+       //Se resta uno porque se numera desde el 0
+       let liSiguiente=lista.children[posición-1];
+       lista.insertBefore(nuevoElemento,liSiguiente)
+     }                    
+  }
+</script>
+</body>
+</html>

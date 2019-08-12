@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contador de visitas</title>
+</head>
+<body>
+
+<script>
+    let hayCookies=false;
+    //primero leemos si en esta sesión ya hemos 
+    //aceptado el cuadro
+    let exp=/(cookie=)((si|no))/;
+    let res=exp.exec(document.cookie);
+    if(res){
+        if(res[2]=="si") hayCookies=true;
+    }
+    if(!hayCookies){
+        hayCookies=confirm(
+            "Esta página usa una cookie para almacenar" + 
+            "el número de visitas que hace cada usuario." +
+            "Si está conforme con ello, pulse Sí\n" +
+            "De otro modo la página no realizará su labor "+
+            "y eliminará las cookies existentes");            
+    }
+    if(hayCookies){
+        //grabamos la cookie que indica que hemos aceptado el cuadro
+        document.cookie="cookie=si";
+        //Expresión Regular para sacar el número de visitas
+        exp=/(visitas=)(\d+)/;
+        //El tercer elemento de exec son las visitas: \d+
+        res=exp.exec(document.cookie);
+        //Las visitas valen 1 si no hay cookie
+        //y uno más que antes si sí la hay
+        let visitas=(res?++res[2]:1);
+        //cálculo de la caducidad
+        let hoyMs=(new Date()).getTime();
+        let caducidad=new Date(hoyMs+1000*60*60*24*365);
+        //cálculo de las visitas
+        document.cookie=`visitas=${visitas};`+
+                     `expires=${caducidad.toUTCString()}`;
+
+        //Mostrar visitas
+        let p=document.createElement("p");
+        p.innerHTML=`Esta es tu visita número `+
+              `<strong>${visitas}</strong>`;
+        document.body.appendChild(p);
+
+    }
+    else{
+      document.cookie="cookie=no";
+      document.cookie="visitas=0;expires=Sat, 01 Jan 2000 00:00:01 GMT";
+    }
+</script>    
+</body>
+</html>
