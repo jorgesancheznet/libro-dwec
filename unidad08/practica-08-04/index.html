@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Control de velocidad</title>
+    <style>
+        p{
+            font-size:2em;
+        }
+    </style>
+</head>
+<body>
+    <p>Velocidad <span>0</span></p>
+    <script>
+        const TOPE_SUPERIOR=120;
+        const TOPE_INFERIOR=0;
+        let velocidad=document.querySelector("span");
+        document.body.addEventListener("keydown",(ev)=>{
+            let v=Number(velocidad.textContent);
+            if(ev.key=="ArrowUp"){
+                if(v<TOPE_SUPERIOR)
+                    velocidad.textContent=v+1;
+            }
+            else if(ev.key=="ArrowDown"){
+                if(v>TOPE_INFERIOR)
+                    velocidad.textContent=v-1;
+            }
+        });
+    </script>
+</body>
+</html>

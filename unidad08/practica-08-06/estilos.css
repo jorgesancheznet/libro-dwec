@@ -1,0 +1,22 @@
+#cargando{
+    background-color: black;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-size:cover;
+    background-position: center;
+    z-index:10;
+}
+.ocultar{
+    top:110% !important;
+    transition:1s;
+}
+h1{
+    color:white;
+    text-align: center;
+}

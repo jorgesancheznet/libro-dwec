@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Imagen tras tecla</title>
+    <style>
+            #imagen{
+                background-color: black;
+                position:fixed;
+                left:0;
+                top:0;
+                width:100%;
+                height:100%;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                background-size:cover;
+                background-position: center;
+
+            }
+            h1{
+                color:white;
+                text-align: center;
+            }
+        </style>
+</head>
+<body>
+    <div id="imagen">
+        <h1>Pulsa <kbd>Alt + F12</kbd> para cambiar la imagen de fondo</h1>
+    </div>
+    <script>
+        document.body.addEventListener("keyup",function(ev){
+            if(ev.altKey && ev.key=="F12"){
+                console.log("aqui");
+                let capa=document.getElementById("imagen");
+                capa.style.backgroundImage="url('https://source.unsplash.com/random')";
+            }
+        })
+    </script>
+</body>
+</html>
