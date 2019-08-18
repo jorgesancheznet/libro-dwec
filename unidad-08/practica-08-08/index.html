@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Informe de Incidencias</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<header>
+    <h1>INFORME INCIDENCIA</h1>
+</header>
+<figure>
+    <img src="img/distribucion.jpg" alt="oficina" id="imagen"/>
+</figure>
+<main>
+    <form action="#">
+        <table>
+            <tr>
+                <td>
+                    <label for="tipo">
+                        Tipo de incidencia
+                    </label>
+                </td>
+                <td>
+                    <select name="tipo" id="tipo">
+                        <option value="distribucion" selected>Distribución</option>
+                        <option value="oficina">Oficina</option>
+                        <option value="produccion">Producción</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label id="labelSerie" for="serie">
+                        Número de serie
+                    </label>
+                </td>
+                <td>
+                    <input type="text" name="serie" id="serie">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="button" id="mostrarDescripcion">
+                        Mostrar Descripción
+                    </button>
+                    <div id="fDescripcion">
+                        <label for="descripcion" id="labelDescripcion">Descripción</label><br>
+                        <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <br>
+                    <button id="enviar">Enviar datos</button>
+                </td>
+            </tr>
+        </table>
+        <div id="capaError">
+    
+        </div>
+        </form>
+</main>
+
+<script src="js/accion.js"></script>
+</body>
+</html>
