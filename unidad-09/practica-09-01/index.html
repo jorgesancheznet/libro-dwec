@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Temporizador</title>
+    <script>
+    function temporizador(tiempo){
+        var promesa=new Promise((resolver, rechazar)=>{
+            var temp=setTimeout(()=>{
+                clearTimeout(temp2);
+                resolver("Tiempo concluido");
+            },tiempo);
+            var temp2=setTimeout(()=>{
+                rechazar("El tiempo no va bien");
+            },tiempo*2);
+        });
+        return promesa;
+    }
+    </script>
+</head>
+<body>
+<script>
+    temporizador(5000).then(()=>{
+        console.log("Finalizó el tiempo");
+    }).catch((m)=>{
+        console.log(m);
+    })
+</script>
+</body>
+</html>

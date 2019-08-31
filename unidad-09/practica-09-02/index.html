@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p style="font-size:2em"></p>
+    <p style="font-size:2em"></p>
+<script type="module">
+    import { temporizador, cuenta } from "./temporizador.js";
+    let p1=document.querySelector("p:first-of-type");
+    let p2=document.querySelector("p:last-of-type");
+    cuenta(6,p1)
+    cuenta(60,p2,100,()=>{
+        p2.textContent="Fin";
+    });
+</script>
+</body>
+</html>

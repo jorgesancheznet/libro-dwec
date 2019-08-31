@@ -1,0 +1,82 @@
+main{
+    width:100%;
+    max-width:400px;
+    margin:auto;
+}
+h1{
+    text-align: center;
+    font-family: sans-serif;
+}
+label{
+    text-align: left;
+    font-family: sans-serif;
+    color:gray;
+}
+input{
+    width:97%;
+    font-size:1.2em;
+    padding:.2em;
+    margin-bottom: .5em;
+    border-radius:5px;
+    border:1px solid red;
+    outline:none;    
+}
+
+button{
+    width:100%;
+    font-size:1.5em;
+    border:none;
+    background-color: gray;
+    padding:.4em;
+    color:white;   
+    border-radius: 10px;
+}
+button:disabled{
+    background-color: lightgray;  
+    color:white;   
+}
+/* Capa que pone borde verde a los controles
+cuando su contenido es válido */
+.verde{
+    border-color: green;
+}
+/* Capa que muestra los errores */
+#error{
+    color:red;
+    font-family: sans-serif;
+    margin-top:3em;
+}
+/* Capa inicialmente oculta
+Cuando se muestra desvanece el formulario*/
+#telon{
+    position: fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index:100;
+    background-color: black;
+    opacity: .5;
+    display:none;
+}
+/* Capa por encima de la anterior
+inicialmente oculta con el mensaje
+de envío de datos correctos*/
+#mensaje{
+    position: fixed;
+    left:50%;
+    margin-left:-150px;
+    margin-top:-100px;
+    top:50%;
+    width:300px;
+    height:200px;
+    z-index:200;
+    background-color:white;    
+    display:none;
+}
+#mensaje p{
+    font-weight: bold;
+    font-size:2em;
+    text-align: center;
+    font-family: sans-serif;
+}

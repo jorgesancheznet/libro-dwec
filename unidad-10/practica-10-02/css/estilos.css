@@ -1,0 +1,14 @@
+*{
+    font-family: sans-serif;
+}
+main{
+    text-align: center;
+}
+p{
+    margin:0;
+}
+.error{
+    background-color:red;
+    color:white;
+    font-weight: bold;
+}
