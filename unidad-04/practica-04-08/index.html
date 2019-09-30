@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+<script>
+    var array=[];
+    var numero;
+    var total=0;
+    do{
+        numero=prompt("Escribe el siguiente número (escribe el cero para terminar)");
+        if(numero!=null){
+            numero=Number(numero);
+            
+            if(!isNaN(numero)){
+                if(numero!=0){
+                    //Si tenemos un número lo añadimos al array
+                    array.push(numero);
+                }
+            }
+            else{
+                alert("No has escrito un número");
+            }
+        }
+    }while(numero!=null && (isNaN(numero) || numero!=0));
+
+    if(numero==null){
+        document.write("<p>El usuario canceló la operación</p>");
+    }  
+    else if(array.length>0 && !isNaN(numero)){
+        for(let n of array){
+            total+=n;
+        }
+        document.write(`<p>La media es ${total/array.length}</p>`);
+    } 
+</script>
+</body>
+</html>

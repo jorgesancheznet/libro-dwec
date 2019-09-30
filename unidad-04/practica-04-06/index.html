@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Array de Asteriscos</title>
+</head>
+<body>
+<script>
+let arrayAsteriscos=[];
+const MAX_NUM=50;
+const NUM_TOTAL=20;
+//array aleatorio
+for(let i=1;i<=NUM_TOTAL;i++){
+    arrayAsteriscos[i]=Math.random()*MAX_NUM+1;
+};
+//recorrer y mostrar asteriscos
+for(let n of arrayAsteriscos){
+    for(let i=1;i<=n;i++){
+        document.write("*");
+    }
+    document.write("<br>");
+}
+</script>    
+</body>
+</html>

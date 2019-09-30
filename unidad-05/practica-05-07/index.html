@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="palindromo.js"></script>
+</head>
+<body>
+<script>
+//constante con los caracteres que no tendremos en cuenta
+let texto=prompt("Escribe el texto sobre el que quieres comprobar si es un palíndromo");
+let palíndromo=esPalíndromo(texto);
+if(palíndromo){
+    document.write("<h1>¡Es un palíndromo!</h1>")
+}
+else{
+    document.write("<h1>No es un palíndromo</h1>")
+}
+</script>
+</body>
+</html>

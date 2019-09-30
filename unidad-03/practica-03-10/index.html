@@ -20,14 +20,14 @@
 </head>
 <body>
 <script>
-const total=10000;
-const simbolosPorFila=10;
+const TOTAL=10000;
+const SIMBOLOS_POR_FILA=10;
 let nSímbolo=1;
 document.write("<h1>Tabla Unicode</h1>");
 document.write("<table>");
-for(let i=1;i<=total/simbolosPorFila;i++){
+for(let i=1;i<=TOTAL/SIMBOLOS_POR_FILA;i++){
     document.write("<tr>");
-    for(let j=1;j<=simbolosPorFila;j++,nSímbolo++){
+    for(let j=1;j<=SIMBOLOS_POR_FILA;j++,nSímbolo++){
         document.write(
             `<th>${nSímbolo}</th>`+
             `<td>&#${nSímbolo};</td>`
