@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validador de NIF</title>
+</head>
+<body>
+<script src="validarNIF.js"></script>
+<script>
+    do {
+        var nif = prompt("Escribe el NIF a validar (vacío para acabar): ");
+        if (nif) {
+            if (validarNIF(nif))
+                alert("Es correcto");
+            else
+                alert("Incorrecto");
+        }
+    }while(nif);
+</script>
+</body>
+</html>

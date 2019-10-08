@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista</title>
+</head>
+<body>
+ <ul id="lista">
+     <li>Camión</li>
+     <li>Linterna</li>
+     <li>Zapatilla</li>
+     <li>Frigorífico</li>
+     <li>Estantería</li>
+     <li>Antena</li>
+     <li>Diamante</li>
+     <li>Estatua</li>
+     <li>carpeta</li>
+     <li>Manta</li>
+     <li>Saltamontes</li>
+     <li>Oruga</li>
+ </ul>   
+ <script>
+     var ul=document.getElementById("lista");
+     setTimeout(()=>{
+        let ordenar=confirm("¿Deseas ordenar la lista?");
+        let arrayLi=[];
+        if(ordenar){
+            for(let li of ul.children){
+                arrayLi.push(li);                
+            }
+            ul.innerHTML="";
+            arrayLi.sort((a,b)=>
+                a.textContent.localeCompare(
+                    b.textContent,"es")
+            );
+            for(let li of arrayLi){
+                ul.appendChild(li);
+            }
+        }
+     },3000);
+ </script>
+</body>
+</html>

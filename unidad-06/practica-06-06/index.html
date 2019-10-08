@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validador de URL</title>
+</head>
+<body>
+<script src="validarURL.js"></script>
+<script>
+    do {
+        var url = prompt("Escribe la URL a validar (vacía para acabar): ");
+        if (url) {
+            if (validarURL(url))
+                alert("Es correcta");
+            else
+                alert("Incorrecta");
+        }
+    }while(url);
+</script>
+</body>
+</html>

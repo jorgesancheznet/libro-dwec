@@ -1,0 +1,11 @@
+.mina{
+    display:inline-block;
+    width:60px;
+    height:60px;
+    line-height:60px;
+    text-align: center;
+    outline:2px solid gray;
+}
+.celda{
+    width:100%;
+}

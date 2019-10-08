@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso Prohibido</title>
+</head>
+<body>
+<script>
+let fecha=new Date();
+let hora=fecha.getHours();
+let dia=fecha.getDay();
+if(hora>=9 && hora<=14 && (dia==6 || dia==0)){
+    document.write("<h1>Bienvenido/a</h1>");
+}
+else{
+    document.write("<h1>Página cerrada</h1>");
+}
+</script>
+</body>
+</html>

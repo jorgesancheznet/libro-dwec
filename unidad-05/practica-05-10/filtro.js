@@ -19,4 +19,4 @@ filtro(array2,e=>e.toUpperCase());
 console.log(array2);;
 let array3=[1,2,3,4,5];
 filtro(array3,e=>factorial(e));
-console.log(array3);;
+console.log(array3);

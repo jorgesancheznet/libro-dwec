@@ -1,0 +1,11 @@
+.celda{
+    display:inline-block;
+    width:60px;
+    height:60px;
+    line-height:60px;
+    text-align: center;
+    outline:2px solid gray;
+}
+.fila{
+    width:100%;
+}

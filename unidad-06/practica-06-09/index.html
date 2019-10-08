@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscaminas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<script src="buscaminas.js"></script>
+<script>
+    //hacemos un tablero de 9x9 y 16 minas
+    let tablero=new Buscaminas(9,9,16);
+    document.write("<h1>Primer tablero</h1>")
+    tablero.dibujar();
+    document.write("<h1>Recalculamos</h1>");
+    tablero.recalcular();
+    tablero.dibujar();
+    document.write("<h1>Recalculamos con otras dimensiones</h1>");
+    tablero.recalcular(15,15,50);
+    tablero.dibujar();
+</script>
+</body>
+</html>
