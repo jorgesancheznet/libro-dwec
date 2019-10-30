@@ -46,24 +46,25 @@
 <p>Obcaecati labore eligendi natus quam eum sint vel necessitatibus accusantium eaque nesciunt, error dolorem odit atque officiis, suscipit adipisci cum earum aperiam inventore dolore! Ea, vero! Voluptatibus provident unde minima!</p>
 <p>Cum, consectetur! Quam amet asperiores velit, error sunt voluptas quaerat libero nulla voluptates aperiam debitis tenetur minus similique dolor optio fuga tempore facilis nihil quae nemo repellendus eligendi? Placeat, dolores!</p>
 <script>
-    var auxP=[];//almacena todos los párrafos
-    //recorremos los párrafos, les eliminamos y les
-    //colocamos en auxP
-    var listaP=document.querySelectorAll("p");
-    listaP.forEach((p)=>{
-        auxP.push(p);
-        p.remove();
-    });
-    //ahora un temporizador irá colocando los párrafos
-    //cuando no haya más, terminaremos
-    var cont=0;
-    var temp=setInterval(()=>{
-        document.body.appendChild(listaP[cont]);
-        cont++;
-        if(cont==listaP.length){
-            clearInterval(temp);
-        }
-    },1000); 
+//almacena todos los párrafos
+var auxP=[];
+//recorremos los párrafos, les eliminamos y les
+//colocamos en auxP
+var listaP=document.querySelectorAll("p");
+listaP.forEach((p)=>{
+    auxP.push(p);
+    p.remove();
+});
+//ahora un temporizador irá colocando los párrafos
+//cuando no haya más, terminaremos
+var cont=0;
+var temp=setInterval(()=>{
+    document.body.appendChild(listaP[cont]);
+    cont++;
+    if(cont==listaP.length){
+        clearInterval(temp);
+    }
+},1000);
 </script>
 </body>
 </html>
