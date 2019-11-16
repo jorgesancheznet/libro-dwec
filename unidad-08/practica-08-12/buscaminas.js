@@ -19,7 +19,8 @@ function Buscaminas(ancho, alto, nMinas) {
         return null;
     if (ancho * alto < nMinas)
         return null;
-
+    //almacena el contenedor del buscaminas
+    this.contenedor=null;
 
 
 
@@ -116,10 +117,9 @@ function Buscaminas(ancho, alto, nMinas) {
      * Muestra el contenido de la celda
      * @param {Element} celda 
      */
-    function _mostrarCelda(celda){
-        console.log(celda);
-        
-        if(celda.classList.contains("oculta")){
+    function _mostrarCelda(celda,a,b){
+        //solo mostramos celdas ocultas
+        if(celda && celda.classList.contains("oculta")){
             celda.classList.remove("oculta");
             celda.classList.add("visible");
             //leemos coordenadas del tablero relacionadas
@@ -131,21 +131,89 @@ function Buscaminas(ancho, alto, nMinas) {
                 celda.classList.remove("oculta");
                 celda.classList.add("visible");
                 celda.classList.add("mina");
+                _despejarTablero();
+                //TODO: Fin del juego
                 alert("OOOOOHH! EL juego ha finalizado. ¡Has pisado una mina!");
+            }
+            else if(_tablero[i][j]===0){
+                _celdasDestapadas++;
+                _mostrarAlrededor(celda);
             }
             else {
                 _celdasDestapadas++;
                 if(_celdasDestapadas===_celdasSinMina){
-                    //hemos destapado todas las celdas
+                    //TODO: Ganar
+                    _despejarTablero();
                     alert("¡ENHORABUENA, has ganado!");
                 }
-                if(_tablero[i][j]===0){
-                    celda.innerHTML="&nbsp;";
-                }
             }
+            let s=`[data-i='${i}'][data-j='${j}']`;
+            let c=document.querySelector(s);
         }
     }
 
+    /**
+     * Permite mostrar recursivamente el contenido
+     * de las celdas de alrededor que no estén ya despejadas
+     * @param celda
+     * @private
+     */
+    function _mostrarAlrededor(celda){
+        let i=celda.dataset.i;
+        let j=celda.dataset.j;
+        let cAux; //celda auxiliar
+        //simplemente invocamos a la función de mostrar celdas
+        //pasando las celdas de alrededor
+        //si alguna celda está fuera de los límites
+        //será la propia función la que la ignore
+        cAux=document.querySelector(
+            `[data-i='${i-1}'][data-j='${j-1}']`
+        );
+        _mostrarCelda(cAux,i-1,j-1);
+
+        cAux=document.querySelector(
+            `[data-i='${i-1}'][data-j='${j}']`
+        );
+        _mostrarCelda(cAux,i-1,j)
+
+        cAux=document.querySelector(
+            `[data-i='${i-1}'][data-j='${parseInt(j)+1}']`
+        );
+        _mostrarCelda(cAux,i-1,j+1);
+
+        cAux=document.querySelector(
+            `[data-i='${i}'][data-j='${j-1}']`
+        );
+        _mostrarCelda(cAux,i,j-1);
+
+        cAux=document.querySelector(
+            `[data-i='${i}'][data-j='${parseInt(j)+1}']`
+        );
+        _mostrarCelda(cAux,i,j+1);
+
+        cAux=document.querySelector(
+            `[data-i='${parseInt(i)+1}'][data-j='${j-1}']`
+        );
+        _mostrarCelda(cAux,i+1,j-1);
+
+        cAux=document.querySelector(
+            `[data-i='${parseInt(i)+1}'][data-j='${j}']`
+        );
+        _mostrarCelda(cAux,i+1,j);
+
+        cAux=document.querySelector(
+            `[data-i='${parseInt(i)+1}'][data-j='${parseInt(j)+1}']`
+        );
+        _mostrarCelda(cAux,i+1,j+1);
+    }
+
+    function _despejarTablero(){
+        let celdasOcultas=document.querySelectorAll(".oculta");
+        for(let celda of celdasOcultas){
+            celda.classList.remove("oculta");
+            celda.classList.add("visible");
+        }
+    }
     /**
      * Genera un nuevo tablero
      */
@@ -165,6 +233,8 @@ function Buscaminas(ancho, alto, nMinas) {
      * @param {Element} contenedor Elemento que contendrá el tablero
      */
     this.dibujar = function (contenedor) {
+        //la propiedad contenedor del buscaminas la ponemos al día
+        this.contenedor=contenedor;
         for (let i = 0; i < _alto; i++) {
             let fila = document.createElement("div");
             fila.classList.add("filaMinas");
@@ -180,6 +250,9 @@ function Buscaminas(ancho, alto, nMinas) {
                 //preparar contenido
                 if(_tablero[i][j]===HAY_MINA){
                     celda.innerHTML="<span>"+SIMBOLO_MINA+"</span>";
+                }
+                else if(_tablero[i][j]===0){
+                    celda.innerHTML="<span>&nbsp;</span>";
                 }
                 else{
                     celda.innerHTML="<span>"+_tablero[i][j]+"</span>";

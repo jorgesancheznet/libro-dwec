@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css"/>
+</head>
+<body>
+<header>
+    <div id="cabecera">
+        <h1>Niveles OSI y TCP/IP</h1>
+    </div>
+    <div id="subcabecera">
+        <div id="osi">
+            <h2>Modelo OSI</h2>
+        </div>
+        <div id="tcpip">
+            <h2>Modelo TCP/IP</h2>
+        </div>
+    </div>
+</header>
+<aside>
+    <input type="checkbox" name="cOSI" id="cOsi" value="modeloOSI"/>
+    <label for="cOsi">OSI</label><br/>
+    <input type="checkbox" name="cTcpip" id="cTcpip" value="modeloTCPIP"/>
+    <label for="cTcpip">TCP/IP</label><br/>
+    <br/>
+    <button id="ocultar">Ocultar ambas</button>
+    <br/>
+    <br/>
+    <button id="todo">Ocultar todo</button>
+</aside>
+<main>
+    <div id="modeloOSI" class="capas">
+        <div id="osi1" class="capa aplicacion">Aplicación</div>
+        <div id="osi2" class="capa aplicacion">Presentación</div>
+        <div id="osi3" class="capa aplicacion">Sesión</div>
+        <div id="osi4" class="capa transporte">Transporte</div>
+        <div id="osi5" class="capa red">Red</div>
+        <div id="osi6" class="capa fisica">Enlace a datos</div>
+        <div id="osi7" class="capa fisica" >Física</div>
+    </div>
+    <div id="modeloTCPIP" class="capas">
+        <div id="tcpip1" class="capa aplicacion aplicacionTCPIP">Aplicación</div>
+        <div id="tcpip2" class="capa transporte">Transporte</div>
+        <div id="tcpip3" class="capa red">Internet</div>
+        <div id="tcpip4" class="capa fisica fisicaTCPIP">Interfaz de red</div>
+    </div>
+</main>
+<div id="capaTodo"></div>
+
+<script src="accion.js"></script>
+</body>
+</html>
