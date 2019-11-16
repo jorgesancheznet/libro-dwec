@@ -10,14 +10,19 @@
 }
 .oculta{
     background-color: gray;
-    color:gray;
+}
+.oculta span{
+    visibility:hidden;
 }
 .visible{
     color:black;
     background-color: white;
 }
+.visible span{
+    visibility:visible;
+}
 .mina{
-    background-color: indianred;
+    background-color: #cd1e30;
 }
 .filaMinas{
     width:100%;
