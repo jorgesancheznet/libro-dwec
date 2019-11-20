@@ -1,0 +1,57 @@
+#fondo {
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:url(../img/cielo.jpg) no-repeat center bottom;
+    background-size: cover;
+    z-index:1;
+}
+
+#helicoptero{
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:120px;
+    height:51px;
+    z-index:100;
+    background-image: url(../img/helicopter.png);
+    background-repeat: no-repeat;
+}
+
+#plataforma{
+    position:fixed;
+    right:50%;
+    bottom:0;
+    width:200px;
+    height:237px;
+    z-index:200;
+    background-image: url(../img/plataforma.png);
+    background-repeat: no-repeat;
+}
+
+#marcador{
+    position:fixed;
+    right:0;
+    top:0;
+    font-family:monospace;
+    font-size:2em;
+    z-index:90;
+    color:yellow;
+}
+
+#bravo{
+    position:fixed;
+    font-family: monospace;
+    font-size:4em;
+    left:50%;
+    bottom:300px;
+    width:200px;
+    height:200px;
+    margin-left:-200px;
+    text-align: center;
+    display:none;
+    z-index:200;
+    color:white;
+}

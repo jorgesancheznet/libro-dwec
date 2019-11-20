@@ -6,11 +6,22 @@
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+<div id="capa1">
+
+</div>
+<div>
+    &nbsp;
+</div>
+<div id="capa2">
+
+</div>
 <script src="buscaminas.js"></script>
 <script>
     //hacemos un tablero de 9x9 y 16 minas
     let tablero=new Buscaminas(16,16,40);
-    tablero.dibujar(document.body);
+    tablero.dibujar(document.getElementById("capa1"));
+    let tablero2=new Buscaminas(25,25,70);
+    tablero2.dibujar(document.getElementById("capa2"));
 </script>
 </body>
 </html>

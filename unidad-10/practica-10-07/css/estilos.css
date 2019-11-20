@@ -1,0 +1,31 @@
+*{
+    font-family: sans-serif;
+}
+body{
+    margin:0;
+}
+
+h1,p{
+    text-align: center;
+}
+
+main{
+    max-width:1200px;
+    text-align: center;
+    line-height:1px;
+    margin:auto;
+}
+
+figure{
+    display: inline-block;
+    margin:0;
+    padding:0;
+    width:300px;
+    height:300px;
+    overflow: hidden;
+    background-color: black;
+}
+figure:hover{
+    opacity:.5;
+}
+
